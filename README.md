@@ -4,14 +4,27 @@ a. Purpose: Nearal Network was used to identify relationship between input and o
 
 b. Results
     Data Processing
-    - Application type as 'T3' used as features
-    - Variables to be dropped - T4,T6,T5,T19,T8,T7,T10,Other      
-
+    - 'IS_SUCCESSFUL' column was used as feature 
+    
 
     Compiling, Training, and Evaluating the Model
-    - 2 hidden layers were used
-    - First layer had 8 features while second had 5 features
-    - Had to change features couple times before desired results was achived
+    - Multiple iterations were used to train and improve accuracy
+    - Iteration 1:
+        - Columns EIN and NAME were droppped
+        - Hidden layers were trained using 'relu' while output layer using 'sigmoid'
+        - Accuracy identified as 73% and output was saved 
+    - Iteration 2:
+        - Column EIN was dropped
+        - To improve efficiency of model, NAME column was converted to binary values using one hot encoder
+        - Hidden layers were trained using 'relu' and 'tanh' while output layer using 'sigmoid'
+        - Accuracy identified as 72.66% and output was saved 
+    - Iteration 3:
+        - Column EIN was dropped
+        - To improve efficiency of model, NAME column was converted to binary values using one hot encoder
+        - Hidden layers were trained using 'relu' and 'tanh' while output layer using 'softmax'
+        - Increased hidden layers from 8 to 20
+        - Accuracy identified as 72.75% and output was saved 
 
 
-c. Summary - Overall the model improved as features were increased. The accuracy increased from 61% to 95%
+c. Summary 
+    Although goal was achieve accuracy more 75%, after 3 iterations accurancy could not improved more than 73%. To achieve higher accuracy more variables needs to be changed and train the model.
